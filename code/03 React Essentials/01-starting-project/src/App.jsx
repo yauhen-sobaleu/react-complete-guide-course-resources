@@ -37,10 +37,30 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-              <TabButton onClick={() => setSelectedTopic('components')}>Components</TabButton>
-              <TabButton onClick={() => setSelectedTopic('jsx')}>JSX</TabButton>
-              <TabButton onClick={() => setSelectedTopic('props')}>Props</TabButton>
-              <TabButton onClick={() => setSelectedTopic('state')}>State</TabButton>
+              <TabButton 
+                  isSelected={selectedTopic === 'components'} 
+                  onClick={() => setSelectedTopic('components')}
+              >
+                  Components
+              </TabButton>
+              <TabButton 
+                  isSelected={selectedTopic === 'jsx'} 
+                  onClick={() => setSelectedTopic('jsx')}
+              >
+                  JSX
+              </TabButton>
+              <TabButton 
+                  isSelected={selectedTopic === 'props'} 
+                  onClick={() => setSelectedTopic('props')}
+              >
+                  Props
+              </TabButton>
+              <TabButton 
+                  isSelected={selectedTopic === 'state'} 
+                  onClick={() => setSelectedTopic('state')}
+              >
+                  State
+              </TabButton>
           </menu>
           {tabContent}
         </section>
