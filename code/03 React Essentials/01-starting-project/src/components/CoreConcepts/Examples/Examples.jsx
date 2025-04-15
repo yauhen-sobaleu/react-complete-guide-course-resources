@@ -25,9 +25,11 @@ function Examples() {
 
     return (
         <Section title="Examples" id="examples">
-          <Tabs buttons={
-            <>
-              <TabButton 
+          <Tabs
+            buttonContainer="menu"
+            buttons={
+              <>
+                <TabButton 
                   isSelected={selectedTopic === 'components'} 
                   onClick={() => setSelectedTopic('components')}
               >
