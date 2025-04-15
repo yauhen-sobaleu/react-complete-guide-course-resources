@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import TabButton from '../../TabButton/TabButton.jsx';
 import { EXAMPLES } from '../../../data.js';
+import Section from '../../Section/Section.jsx';
 import './Examples.css';
 
 function Examples() {
@@ -22,36 +23,35 @@ function Examples() {
     }
 
     return (
-        <section id="examples">
-        <h2>Examples</h2>
-        <menu>
-            <TabButton 
-                isSelected={selectedTopic === 'components'} 
-                onClick={() => setSelectedTopic('components')}
-            >
-                Components
-            </TabButton>
-            <TabButton 
-                isSelected={selectedTopic === 'jsx'} 
-                onClick={() => setSelectedTopic('jsx')}
-            >
-                JSX
-            </TabButton>
-            <TabButton 
-                isSelected={selectedTopic === 'props'} 
-                onClick={() => setSelectedTopic('props')}
-            >
-                Props
-            </TabButton>
-            <TabButton 
-                isSelected={selectedTopic === 'state'} 
-                onClick={() => setSelectedTopic('state')}
-            >
-                State
-            </TabButton>
-        </menu>
+        <Section title="Examples" id="examples">
+          <menu>
+              <TabButton 
+                  isSelected={selectedTopic === 'components'} 
+                  onClick={() => setSelectedTopic('components')}
+              >
+                  Components
+              </TabButton>
+              <TabButton 
+                  isSelected={selectedTopic === 'jsx'} 
+                  onClick={() => setSelectedTopic('jsx')}
+              >
+                  JSX
+              </TabButton>
+              <TabButton 
+                  isSelected={selectedTopic === 'props'} 
+                  onClick={() => setSelectedTopic('props')}
+              >
+                  Props
+              </TabButton>
+              <TabButton 
+                  isSelected={selectedTopic === 'state'} 
+                  onClick={() => setSelectedTopic('state')}
+              >
+                  State
+              </TabButton>
+          </menu>
         {tabContent}
-      </section>
+      </Section>
     )
 }
 
