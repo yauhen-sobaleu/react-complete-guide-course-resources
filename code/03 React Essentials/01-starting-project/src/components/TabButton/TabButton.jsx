@@ -1,3 +1,5 @@
+import './TabButton.css';
+
 function TabButton({ children, onClick, isSelected }) {
     return (
         <li>
