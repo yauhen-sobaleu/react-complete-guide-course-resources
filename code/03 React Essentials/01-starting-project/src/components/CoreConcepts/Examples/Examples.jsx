@@ -26,7 +26,6 @@ function Examples() {
     return (
         <Section title="Examples" id="examples">
           <Tabs
-            buttonContainer="menu"
             buttons={
               <>
                 <TabButton 

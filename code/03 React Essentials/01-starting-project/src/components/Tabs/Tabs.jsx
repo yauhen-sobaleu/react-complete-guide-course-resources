@@ -1,4 +1,4 @@
-function Tabs({ children, buttons, buttonContainer }) {
+function Tabs({ children, buttons, buttonContainer = "menu"}) {
     const ButtonContainer = buttonContainer;
 
     return (
