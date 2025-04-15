@@ -1,7 +1,7 @@
 import "./Player.css";
 import { useState } from "react";
 
-function Player({ icon, name, onEdit }) {
+function Player({ icon, name }) {
   const [isEditing, setIsEditing] = useState(false);
   const [playerName, setPlayerName] = useState(name);
 
