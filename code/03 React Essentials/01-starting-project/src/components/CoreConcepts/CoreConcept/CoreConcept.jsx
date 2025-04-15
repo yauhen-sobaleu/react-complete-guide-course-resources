@@ -1,5 +1,3 @@
-import './CoreConcept.css';
-
 /**
  * CoreConcept component displays a single core concept of React.
  * 
