@@ -1,20 +1,16 @@
 import "./Player.css";
 import { useState } from "react";
 
-function Player({ icon, name}) {
+function Player({ icon, name }) {
   const [isEditing, setIsEditing] = useState(false);
 
   function handleEdit() {
-    if (isEditing) {
-      setIsEditing(false);
-    } else {
-      setIsEditing(true);
-    }
+    setIsEditing((editing) => !editing);
   }
 
   let playerName = <span className="player-name">{name}</span>;
   if (isEditing) {
-    playerName = <input type="text" required />;
+    playerName = <input type="text" required value={name} />;
   }
 
   const buttonText = isEditing ? "Save" : "Edit";
