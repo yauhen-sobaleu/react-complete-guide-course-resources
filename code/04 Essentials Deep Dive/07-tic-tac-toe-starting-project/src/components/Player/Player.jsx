@@ -1,7 +1,7 @@
 import "./Player.css";
 import { useState } from "react";
 
-function Player({ icon, name }) {
+function Player({ icon, name, isActive }) {
   const [isEditing, setIsEditing] = useState(false);
   const [playerName, setPlayerName] = useState(name);
 
@@ -28,7 +28,7 @@ function Player({ icon, name }) {
   const buttonText = isEditing ? "Save" : "Edit";
 
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
         <span className="player">
           {editablePlayerName}
           <span className="player-icon">{icon}</span>
