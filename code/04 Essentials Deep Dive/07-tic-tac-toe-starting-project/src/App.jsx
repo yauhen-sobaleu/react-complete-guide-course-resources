@@ -21,9 +21,13 @@ function getActivePlayerSymbol(gameTurns) {
 function App() {
   const [gameTurns, setGameTurns] = useState([])
 
+  function handleRestart() {
+    setGameTurns([]);
+  }
+
   const activePlayerSymbol = getActivePlayerSymbol(gameTurns);
 
-  let gameBoard = initialGameBoard;
+  let gameBoard = [...initialGameBoard.map(row => [...row])];
   for (const turn of gameTurns) {
     const { square, playerSymbol } = turn;
     gameBoard[square.rowIndex][square.columnIndex] = playerSymbol;
@@ -77,7 +81,13 @@ function App() {
           <Player icon="O" name="Player 2" isActive={activePlayerSymbol === "O"} />
         </ol>
 
-        {(winner || isTie) && <GameOver winner={winner} isTie={isTie} />}
+        {(winner || isTie) && (
+            <GameOver 
+                winner={winner} 
+                isTie={isTie} 
+                onRestart={handleRestart} 
+            />
+        )}
 
         <GameBoard 
           onSelectSquare={handleSelectSquare} 
