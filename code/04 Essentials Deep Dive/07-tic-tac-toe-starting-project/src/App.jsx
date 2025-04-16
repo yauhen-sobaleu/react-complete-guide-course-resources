@@ -19,6 +19,10 @@ function getActivePlayerSymbol(gameTurns) {
 }
 
 function App() {
+  const [players, setPlayers] = useState({
+    X: 'Player 1',
+    O: 'Player 2'
+  })
   const [gameTurns, setGameTurns] = useState([])
 
   function handleRestart() {
@@ -47,7 +51,7 @@ function App() {
       firstSquareSymbol === secondSquareSymbol &&
       secondSquareSymbol === thirdSquareSymbol
     ) {
-      winner = firstSquareSymbol;
+      winner = players[firstSquareSymbol];
     }
   }
 
@@ -73,13 +77,22 @@ function App() {
     })
   }
 
+  function handlePlayerNameChange(symbol, name) {
+    setPlayers(prevPlayers => {
+      return {
+        ...prevPlayers,
+        [symbol]: name
+      }
+    })
+  }
   return (
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player icon="X" name="Player 1" isActive={activePlayerSymbol === "X"} />
-          <Player icon="O" name="Player 2" isActive={activePlayerSymbol === "O"} />
+          <Player icon="X" name="Player 1" isActive={activePlayerSymbol === "X"} onChangeName={handlePlayerNameChange} />
+          <Player icon="O" name="Player 2" isActive={activePlayerSymbol === "O"} onChangeName={handlePlayerNameChange} />
         </ol>
+
 
         {(winner || isTie) && (
             <GameOver 

@@ -1,12 +1,16 @@
 import "./Player.css";
 import { useState } from "react";
 
-function Player({ icon, name, isActive }) {
-  const [isEditing, setIsEditing] = useState(false);
+function Player({ icon, name, isActive, onChangeName }) {
   const [playerName, setPlayerName] = useState(name);
+  const [isEditing, setIsEditing] = useState(false);
 
   function handleEdit() {
     setIsEditing((editing) => !editing);
+
+    if (isEditing) {
+      onChangeName(icon, playerName);
+    }
   }
 
   function handleNameChange(event) {
