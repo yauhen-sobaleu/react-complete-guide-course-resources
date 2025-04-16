@@ -3,6 +3,12 @@ import Player from "./components/Player/Player";
 import GameBoard from "./components/GameBoard/GameBoard";
 import Log from "./components/Log/Log";
 
+const initialGameBoard = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+];
+
 function getActivePlayerSymbol(gameTurns) {
   if (gameTurns.length === 0) {
     return "X";
@@ -14,6 +20,13 @@ function App() {
   const [gameTurns, setGameTurns] = useState([])
 
   const activePlayerSymbol = getActivePlayerSymbol(gameTurns);
+
+  let gameBoard = initialGameBoard;
+  for (const turn of gameTurns) {
+    const { square, playerSymbol } = turn;
+    gameBoard[square.rowIndex][square.columnIndex] = playerSymbol;
+  }
+
 
   function handleSelectSquare(rowIndex, columnIndex) {
     setGameTurns(prevTurns => {
@@ -44,7 +57,7 @@ function App() {
 
         <GameBoard 
           onSelectSquare={handleSelectSquare} 
-          turns={gameTurns} 
+          board={gameBoard}
         />
       </div>
 
