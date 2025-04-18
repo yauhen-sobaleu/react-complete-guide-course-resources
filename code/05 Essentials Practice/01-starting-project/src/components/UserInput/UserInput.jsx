@@ -1,11 +1,9 @@
 import './UserInput.css';
-import { useState } from 'react';
 
-function UserInput( { name, initialValue, step }) {
-    const [inputValue, setInputValue] = useState(initialValue);
+function UserInput( { name, value, step, onChange }) {
 
-    const inputChangeHandler = (event) => {
-        setInputValue(event.target.value);
+    function onInputChange(event) {
+        onChange(name, event.target.value);
     }
 
     return (
@@ -15,9 +13,9 @@ function UserInput( { name, initialValue, step }) {
                 type="number"
                 name={name}
                 id={name}
-                value={inputValue}
+                value={value}
                 step={step}
-                onChange={inputChangeHandler}
+                onChange={onInputChange}
             />
         </p>
     );
