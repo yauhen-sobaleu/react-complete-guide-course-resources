@@ -7,8 +7,6 @@ function Results({ initialInvestment, annualInvestment, expectedReturn, duration
 
     const headers = ['Year', 'Investment Value', 'Interest (Year)', 'Total Interest', 'Invested Capital'];
 
-    console.log(initialInvestment, annualInvestment, expectedReturn, duration);
-
     const results = calculateInvestmentResults({
         initialInvestment: Number(initialInvestment),
         annualInvestment: Number(annualInvestment),
@@ -31,8 +29,6 @@ function Results({ initialInvestment, annualInvestment, expectedReturn, duration
         return investmentValue + totalInterest;
     }
 
-    console.log(results);
-
     return (
         <table id="result">
             <thead>
@@ -43,15 +39,18 @@ function Results({ initialInvestment, annualInvestment, expectedReturn, duration
             <tbody>
                 {
                     results.map(
-                        result => (
-                            <tr key={result.year}>
-                                <TableData format={false}>{result.year}</TableData>
-                                <TableData>{result.valueEndOfYear}</TableData>
-                                <TableData>{result.interest}</TableData>
-                                <TableData>{calculateTotalInterest(results, result.year)}</TableData>
-                                <TableData>{calculateInvestedCapital(result.valueEndOfYear, calculateTotalInterest(results, result.year))}</TableData>
-                            </tr>
-                        )
+                        result => {
+                            const totalInterest = calculateTotalInterest(results, result.year);
+                            return (
+                                <tr key={result.year}>
+                                    <TableData format={false}>{result.year}</TableData>
+                                    <TableData>{result.valueEndOfYear}</TableData>
+                                    <TableData>{result.interest}</TableData>
+                                    <TableData>{totalInterest}</TableData>
+                                    <TableData>{calculateInvestedCapital(result.valueEndOfYear, totalInterest)}</TableData>
+                                </tr>
+                            );
+                        }
                     )
                 }
             </tbody>
