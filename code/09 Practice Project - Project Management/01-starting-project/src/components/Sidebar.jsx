@@ -1,17 +1,15 @@
+import Button from "./Button";
+
 export default function Sidebar() {
   return (
-    <section aria-label="Боковая панель управления проектами">
-      <div className="bg-black h-screen w-72 rounded-r-md">
+    <aside aria-label="Боковая панель управления проектами">
         <h1 className="uppercase text-xl font-bold text-white pt-20 pl-6">
           Your Projects
         </h1>
 
-        <button className="bg-stone-700 p-2 rounded-md ml-6 mt-8">
-          <span className="text-stone-400 hover:text-stone-300">
+          <Button className="ml-6 mt-8">
             + Add Project
-          </span>
-        </button>
-      </div>
-    </section>
+          </Button>
+    </aside>
   );
 }
