@@ -5,12 +5,8 @@ function App() {
   return (
     <>
       <main>
-        <div className="bg-black h-screen w-72 rounded-r-md fixed left-0 top-0">
-          <Projects />
-        </div>
-        <div className="ml-72">
-          <CreateProject />
-        </div>
+        <Projects className="bg-black h-screen w-72 rounded-r-md fixed left-0 top-0"/>
+        <CreateProject className='text-center ml-72' />
       </main>
     </>
   );
