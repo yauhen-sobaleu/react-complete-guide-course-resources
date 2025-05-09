@@ -1,4 +1,4 @@
-export default function Button({ children, className = '' }) {
+export default function Button({ children, className = '', onClick }) {
     return (
         <button className={`
             bg-stone-700 
@@ -7,7 +7,7 @@ export default function Button({ children, className = '' }) {
             text-stone-400 
             hover:text-stone-300 
             ${className}
-        `}>
+        `} onClick={onClick}>
             { children }
         </button>
     ) 

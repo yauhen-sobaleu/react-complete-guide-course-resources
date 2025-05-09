@@ -1,14 +1,24 @@
-import Projects from "./components/Sidebar";
-import CreateProject from "./components/CreateProject";
+import { useState } from 'react';
+
+import MainLayout from './components/MainLayout';
+import Projects from './components/Sidebar';
+import CreateProject from './components/CreateProject';
+import NewProject from './components/NewProject';
 
 function App() {
+  const [isNewProject, setIsNewProject] = useState(false);
+
+  function handleCreateProject() {
+    setIsNewProject((prev) => !prev);
+  }
+
   return (
-    <>
-      <main>
-        <Projects className="bg-black h-screen w-72 rounded-r-md fixed left-0 top-0"/>
-        <CreateProject className='text-center ml-72' />
-      </main>
-    </>
+    <MainLayout
+      sidebar={<Projects />}
+      content={
+        isNewProject ? <NewProject /> : <CreateProject onCreateProject={handleCreateProject} />
+      }
+    />
   );
 }
 
