@@ -3,9 +3,8 @@ export default function MainLayout({ sidebar, content }) {
     <main>
       <aside
         className="
-          bg-black
-          h-screen w-72
-          rounded-r-md
+          h-screen
+          w-72
           fixed
           left-0
           top-0
