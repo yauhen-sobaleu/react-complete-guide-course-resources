@@ -9,16 +9,16 @@ export default function Input({ id, label, ...props }) {
             uppercase 
             text-xs 
             font-semibold
-            mb-1
             "
       >
         {label}
       </label>
+
       <input
         id={id}
         className={`
         bg-stone-200
-        w-96
+        w-full
         hover:border-b-2
         hover:border-stone-800
         `}
