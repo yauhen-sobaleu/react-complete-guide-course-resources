@@ -1,6 +1,6 @@
-export default function Input({ id, label, className = '', ...props }) {
+export default function Input({ id, label, ...props }) {
   return (
-    <div className={className}>
+    <>
       <label
         htmlFor={id}
         className="
@@ -24,6 +24,6 @@ export default function Input({ id, label, className = '', ...props }) {
         `}
         {...props}
       />
-    </div>
+    </>
   );
 }
