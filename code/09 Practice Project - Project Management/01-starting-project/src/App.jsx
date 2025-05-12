@@ -6,17 +6,21 @@ import CreateProject from './components/CreateProject';
 import NewProject from './components/NewProject';
 
 function App() {
-  const [isNewProject, setIsNewProject] = useState(false);
+  const [isCreatingNewProject, setIsCreatingNewProject] = useState(false);
 
   function handleCreateProject() {
-    setIsNewProject((prev) => !prev);
+    setIsCreatingNewProject((prev) => !prev);
   }
 
   return (
     <MainLayout
       sidebar={<Projects />}
       content={
-        isNewProject ? <NewProject /> : <CreateProject onCreateProject={handleCreateProject} />
+        isCreatingNewProject ? (
+          <NewProject />
+        ) : (
+          <CreateProject onCreateProject={handleCreateProject} />
+        )
       }
     />
   );
