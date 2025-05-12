@@ -2,19 +2,18 @@ import React from 'react';
 import Label from './Label';
 import { inputStyles } from '../styles/input-styles';
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   id: string;
   label: string;
 }
 
-export default function Input({ id, label, ...props }: InputProps) {
+export default function TextArea({ id, label, ...props }: TextAreaProps) {
   return (
     <>
       <div className="mb-1">
         <Label id={id}>{label}</Label>
       </div>
-
-      <input id={id} className={inputStyles} {...props} />
+      <textarea id={id} className={inputStyles} {...props} />
     </>
   );
 }
