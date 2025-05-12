@@ -12,7 +12,7 @@ export default function MainLayout({ sidebar, content }) {
       >
         {sidebar}
       </aside>
-      <section className="ml-72">{content}</section>
+      <section className="ml-72 mt-32">{content}</section>
     </main>
   );
 }
