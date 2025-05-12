@@ -8,9 +8,9 @@ export default function CreateProject({ onCreateProject }) {
       <h2 className="capitalize text-xl font-bold text-stone-500">No project selected</h2>
       <p className="text-stone-400 mt-3">Select a project or get started with a new one</p>
 
-      <Button className="mt-8 px-5" onClick={onCreateProject}>
-        Create new project
-      </Button>
+      <div className="mt-8 px-5">
+        <Button onClick={onCreateProject}>Create new project</Button>
+      </div>
     </section>
   );
 }
