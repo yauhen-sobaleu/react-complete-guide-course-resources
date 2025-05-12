@@ -1,10 +1,10 @@
 import Input from './Input';
 
-export default function NewProject({ className = '' }) {
+export default function NewProject() {
   return (
-    <section className={className}>
-      <Input id="title" type="text" label="Title" className="mb-4" />
-      <Input id="description" type="text" label="Description" className="mb-4" />
-    </section>
+    <form>
+      <Input id="title" type="text" label="Title" />
+      <Input id="description" type="text" label="Description" />
+    </form>
   );
 }
