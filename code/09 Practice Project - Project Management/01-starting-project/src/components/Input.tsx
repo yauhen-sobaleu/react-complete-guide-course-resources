@@ -1,4 +1,11 @@
-export default function Input({ id, label, ...props }) {
+import React from 'react';
+
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  id: string;
+  label: string;
+}
+
+export default function Input({ id, label, ...props }: InputProps) {
   return (
     <>
       <label
