@@ -1,3 +1,5 @@
+import { ButtonVariant } from '../styles/input-styles';
+import Button from './Button';
 import Input from './Input';
 import TextArea from './TextArea';
 
@@ -5,8 +7,10 @@ export default function NewProject() {
   const inputMargin = 'mb-4';
 
   return (
-    <form>
-      <div className="px-8 w-10/12">
+    <div className="px-8 w-10/12">
+      <Button variant={ButtonVariant.BLACK}>Save</Button>
+
+      <form id="new-project-form">
         <div className={inputMargin}>
           <Input id="title" type="text" label="Title" />
         </div>
@@ -16,7 +20,7 @@ export default function NewProject() {
         <div className={inputMargin}>
           <Input id="duedate" type="date" label="Due Date" />
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }

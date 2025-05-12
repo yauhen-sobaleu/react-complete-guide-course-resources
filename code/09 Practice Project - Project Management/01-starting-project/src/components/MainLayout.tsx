@@ -1,4 +1,10 @@
-export default function MainLayout({ sidebar, content }) {
+export default function MainLayout({
+  sidebar,
+  content,
+}: {
+  sidebar: React.ReactNode;
+  content: React.ReactNode;
+}) {
   return (
     <main>
       <aside
