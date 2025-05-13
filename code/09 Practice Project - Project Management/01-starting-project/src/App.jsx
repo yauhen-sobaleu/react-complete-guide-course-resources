@@ -12,12 +12,16 @@ function App() {
     setIsCreatingNewProject((prev) => !prev);
   }
 
+  function handleCancel() {
+    setIsCreatingNewProject(false);
+  }
+
   return (
     <MainLayout
-      sidebar={<Projects />}
+      sidebar={<Projects onAddProject={handleCreateProject} />}
       content={
         isCreatingNewProject ? (
-          <NewProject />
+          <NewProject onCancel={handleCancel} />
         ) : (
           <CreateProject onCreateProject={handleCreateProject} />
         )

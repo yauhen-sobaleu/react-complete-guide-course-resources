@@ -2,7 +2,7 @@ import icon from '/logo.png';
 import Button from './Button';
 import { ButtonVariant } from '../styles/input-styles';
 
-export default function CreateProject({ onCreateProject }) {
+export default function CreateProject({ onCreateProject }: { onCreateProject: () => void }) {
   return (
     <section className="text-center">
       <img src={icon} className="w-14 h-14 mx-auto mb-3" />

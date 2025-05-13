@@ -6,7 +6,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: ButtonVariant;
   onClick?: () => void;
 }
-export default function Button({ children, form, variant, onClick = undefined }: ButtonProps) {
+export default function Button({ children, form, variant, onClick }: ButtonProps) {
   const buttonStyle = buttonStyles[variant];
 
   return (

@@ -3,14 +3,16 @@ import Button from './Button';
 import Input from './Input';
 import TextArea from './TextArea';
 
-export default function NewProject() {
+export default function NewProject({ onCancel }: { onCancel: () => void }) {
   const inputMargin = 'mb-4';
 
   return (
     <>
       <div className="px-8 w-10/12">
         <div className="text-right">
-          <Button variant={ButtonVariant.WHITE}>Cancel</Button>
+          <Button variant={ButtonVariant.WHITE} onClick={onCancel}>
+            Cancel
+          </Button>
           <Button form="new-project-form" variant={ButtonVariant.BLACK}>
             Save
           </Button>
