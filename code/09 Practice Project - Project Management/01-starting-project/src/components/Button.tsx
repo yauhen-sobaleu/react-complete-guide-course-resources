@@ -1,6 +1,12 @@
-import { buttonStyles } from '../styles/input-styles';
+import { buttonStyles, ButtonVariant } from '../styles/input-styles';
 
-export default function Button({ children, form, variant, onClick = undefined }) {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+  form?: string;
+  variant: ButtonVariant;
+  onClick?: () => void;
+}
+export default function Button({ children, form, variant, onClick = undefined }: ButtonProps) {
   const buttonStyle = buttonStyles[variant];
 
   return (
