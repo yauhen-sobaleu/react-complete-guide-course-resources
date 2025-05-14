@@ -56,7 +56,7 @@ export default function NewProject({
     <>
       <div className="px-8 w-10/12">
         <div className="text-right">
-          <Button variant={ButtonVariant.WHITE} onClick={onCancel}>
+          <Button variant={ButtonVariant.TRANSPARENT_BLACK} onClick={onCancel}>
             Cancel
           </Button>
           <Button form="new-project-form" variant={ButtonVariant.BLACK}>

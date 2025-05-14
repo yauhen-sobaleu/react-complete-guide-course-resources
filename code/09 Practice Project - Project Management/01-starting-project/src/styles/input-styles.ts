@@ -13,11 +13,13 @@ export const inputStyles = `
 export enum ButtonVariant {
   GRAY = 'gray',
   BLACK = 'black',
-  WHITE = 'white',
+  TRANSPARENT_BLACK = 'transparent-black',
+  TRANSPARENT_WHITE = 'transparent-white',
 }
 
 export const buttonStyles: Record<ButtonVariant, string> = {
   [ButtonVariant.GRAY]: 'bg-stone-700 text-stone-400 hover:text-stone-300',
   [ButtonVariant.BLACK]: 'bg-stone-900 text-white',
-  [ButtonVariant.WHITE]: 'text-black',
+  [ButtonVariant.TRANSPARENT_BLACK]: 'text-black',
+  [ButtonVariant.TRANSPARENT_WHITE]: 'text-gray-300',
 };

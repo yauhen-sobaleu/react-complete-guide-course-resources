@@ -25,7 +25,7 @@ function App() {
 
   return (
     <MainLayout
-      sidebar={<Projects onAddProject={handleCreateProject} />}
+      sidebar={<Projects onAddProject={handleCreateProject} projects={projects} />}
       content={
         isCreatingNewProject ? (
           <NewProject onCancel={handleCancel} onSaveProject={handleSaveProject} />

@@ -1,7 +1,15 @@
 import Button from './Button';
 import { ButtonVariant } from '../styles/input-styles';
+import ProjectsList from './ProjectsList';
+import { Project } from '../types/project';
 
-export default function Sidebar({ onAddProject }: { onAddProject: () => void }) {
+export default function Sidebar({
+  onAddProject,
+  projects,
+}: {
+  onAddProject: () => void;
+  projects: Project[];
+}) {
   return (
     <div className="bg-black rounded-r-md h-full text-white">
       <h1 className="uppercase text-xl font-bold text-white pt-20 pl-6">Your Projects</h1>
@@ -10,6 +18,9 @@ export default function Sidebar({ onAddProject }: { onAddProject: () => void }) 
         <Button variant={ButtonVariant.GRAY} onClick={onAddProject}>
           + Add Project
         </Button>
+      </div>
+      <div className="ml-4 mt-8">
+        <ProjectsList projects={projects} />
       </div>
     </div>
   );
