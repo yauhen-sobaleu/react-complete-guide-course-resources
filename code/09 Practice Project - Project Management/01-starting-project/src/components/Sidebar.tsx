@@ -6,9 +6,11 @@ import { Project } from '../types/project';
 export default function Sidebar({
   onAddProject,
   projects,
+  onSelectProject,
 }: {
   onAddProject: () => void;
   projects: Project[];
+  onSelectProject: (project: Project) => void;
 }) {
   return (
     <div className="bg-black rounded-r-md h-full text-white">
@@ -20,7 +22,7 @@ export default function Sidebar({
         </Button>
       </div>
       <div className="ml-4 mt-8">
-        <ProjectsList projects={projects} />
+        <ProjectsList projects={projects} onSelectProject={onSelectProject} />
       </div>
     </div>
   );

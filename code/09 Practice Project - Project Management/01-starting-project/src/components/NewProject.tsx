@@ -54,7 +54,7 @@ export default function NewProject({
 
   return (
     <>
-      <div className="px-8 w-10/12">
+      <div className="w-10/12">
         <div className="text-right">
           <Button variant={ButtonVariant.TRANSPARENT_BLACK} onClick={onCancel}>
             Cancel
