@@ -49,6 +49,8 @@ export default function NewProject({
       title: formData.title,
       description: formData.description,
       dueDate: new Date(formData.dueDate),
+      tasks: [],
+      isSelected: false,
     });
   }
 
